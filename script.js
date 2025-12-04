@@ -1,0 +1,69 @@
+/*Задача 1
+Реализуйте функцию concatenateStrings, которая принимает две строки в качестве аргументов, возвращает результат 
+их конкатенации и удаляет все пробелы.*/
+
+const concatenateStrings = (str1, str2) => {
+
+    let concatenated = str1 + str2;
+    let result = concatenated.replace(/\s+/g, '');
+    return result;
+}
+
+
+//Задача 2. Реализуйте функцию getStringLength, которая принимает строку в качестве аргумента и возвращает ее длину.
+
+const getStringLength = (str) => {
+    return str.length;
+}
+
+
+/*Задача 3
+Реализуйте функцию getStringFromTemplate, которая принимает параметры firstName и lastName 
+и возвращает результат подстановки этих значений в строку-шаблон 'Hello, firstName  lastName!'.
+Важно: используйте интерполяцию (шаблонные строки) для формирования результата, а не операцию конкатенации.
+*/
+
+const getStringFromTemplate = (firstName, lastName) => {
+    return `Hello, ${firstName} ${lastName}!`;
+}
+
+
+/*Задача 4
+Реализуйте функцию getChar, которая принимает строку и порядковый номер символа в строке 
+и возвращает символ, соответствующий этому порядковому номеру.
+*/
+
+
+const getChar = (str, index) => {
+    return str[index - 1];
+}
+
+/*Задача 5
+Реализуйте функцию removeFirstOccurrences, которая удаляет первое вхождение подстроки  внутри строки.
+'To be or not to be', 'not'  => 'To be or  to be'
+'I like legends', 'end' => 'I like legs',
+'ABABAB','BA' => 'ABAB'
+*/
+
+const removeFirstOccurrences = (str, subStr) => {
+    const index = str.indexOf(subStr);
+    if (index === -1) {
+        return str;
+    }
+    return str.slice(0, index) + str.slice(index + subStr.length);
+}
+
+/* Задача 6
+Реализуйте функцию getRectangleString, которая  возвращает строковое представление прямоугольника 
+с заданной шириной и высотой, используя символы '*'.
+*/
+
+const getRectangleString = (width, height) => {
+    let result = '';
+    for (let i = 0; i < height; i++) {
+        result += '*'.repeat(width) + '\n';
+    }
+    return result.trim();
+}
+
+console.log(getRectangleString(5, 3));
